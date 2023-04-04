@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './reset.css'
 import './component.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 //comp
 import Header from './component/Header'
@@ -18,8 +18,32 @@ import NewsData from './data/news.json'
 
 
 
+
 function App(){
- 
+
+ let shinkai = "신카이 마코토"
+ function getMovieData(){
+  const datay = fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=6b0a070ecaed603b459cac7b691dc16f&itemPerPage=30&directorNm=${shinkai}`).then(res => res.json())
+  return  datay.then((item) => item.movieListResult.movieList);
+ }
+
+ const [test, setTest] = useState([])
+
+ useEffect(() => {
+ async function GetData(){
+  let moviedata;
+  try{
+    moviedata = await getMovieData();
+    setTest(moviedata)
+  }
+  catch(error) {
+    console.log(error)
+  }
+ }
+ GetData()
+},[])
+console.log(test)
+
   let Rdata = []
   let Mdata = []
   const [ReviwD, setReviewD] = useState(ReviewData)
@@ -29,14 +53,23 @@ function App(){
   const [query,setQuery] = useState('')
 
  for (let i of ReviwD[clue.replace(/(\s*)/g,"").toLowerCase()]){
-  Rdata.push(i)
+  if(i === null || i === undefined){
+    Rdata = []
+  }
+  else{
+    Rdata.push(i)
+  }
+  
  }
  for (let i of MovieD){
   let data = i.name.replace(/(\s*)/g,"").toLowerCase()
   let score = 0
   let people = 0
+
+
+
   for (let j of ReviwD[data]){
-    if (j.length === 0){
+    if (j === null){
       return false
     }
     else{
@@ -44,6 +77,7 @@ function App(){
     people++
     }
   }
+  
   i["score"] = Math.floor((score/people)*100)/100
   Mdata.push(i)
  }

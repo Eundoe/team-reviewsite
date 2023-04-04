@@ -18,7 +18,7 @@ function NewsList({area, Ndata}){
   if (area === "count"){
     areas = Ndata.sort((a,b) => {
       return a.count > b.count ? -1 : 1
-    }).slice(0,5)
+    }).slice(0,4)
   }
   return areas.map((item,index) => {
     return(

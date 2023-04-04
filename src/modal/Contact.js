@@ -1,11 +1,8 @@
 import './Contact.css'
 
-let contname = document.querySelector('input#uname')
-let contmail = document.querySelector('input#umail')
-let contmsg = document.querySelector('textarea#umessage')
+
 
 function Contact(){
-
   let newmessage = {
     name : "",
     mail : "",
@@ -13,32 +10,32 @@ function Contact(){
   }
 
   function Checkcont(e){
-    e.preventDefault();
+     e.preventDefault();
     let errorw = []
-    if (contname.value.length === 0 || /^[가-힣|a-z|A-Z]+$/.test(contname.value) !== true){
+    if (document.querySelector('input#uname').value.length < 1 || /^[가-힣|a-z|A-Z]+$/.test(document.querySelector('input#uname').value) !== true){
       errorw.push("이름")
     }
-    if (contmail.value.length === 0 || /(^[-_.]?[0-9a-zA-Z]{4,13})+\@([0-9a-z]+)\.([a-z]{2,3})$/i.test(contmail.value) !== true){
+    if (document.querySelector('input#umail').value.length < 1 || /(^[-_.]?[0-9a-zA-Z]{4,13})+\@([0-9a-z]+)\.([a-z]{2,3})$/i.test(document.querySelector('input#umail').value) !== true){
       errorw.push("이메일")
     }
-    if (contmsg.value.length === 0 ){
+    if (document.querySelector('textarea#umessage').value.length < 1  ){
       errorw.push("메세지")
     }
     return (errorw.length > 0) ? window.alert(`잘못된 ${errorw.join(',')} 입니다.`) : 
-    (newmessage.name = contname.value,
-    newmessage.mail = contmail.value,
-    newmessage.message = contmsg.value,
+    (newmessage.name = document.querySelector('input#uname').value,
+    newmessage.mail = document.querySelector('input#umail').value,
+    newmessage.message = document.querySelector('textarea#umessage').value,
     console.log(newmessage),
     ResetContact())
   }
 
   function ResetContact(){
-    contname.value = ""
-    contname.previousElementSibling.style.opacity = "1"
-    contmail.value = ""
-    contmail.previousElementSibling.style.opacity = "1"
-    contmsg.value = ""
-    contmsg.previousElementSibling.style.opacity = "1"
+    document.querySelector('input#uname').value = ""
+    document.querySelector('input#uname').previousElementSibling.style.opacity = "1"
+    document.querySelector('input#umail').value = ""
+    document.querySelector('input#umail').previousElementSibling.style.opacity = "1"
+    document.querySelector('textarea#umessage').value = ""
+    document.querySelector('textarea#umessage').previousElementSibling.style.opacity = "1"
     document.querySelector('div#contmodal').style.display = "none"
   }
 
@@ -61,7 +58,7 @@ function Contact(){
                 </li>
                 <li>
                   <label htmlFor="umail">email</label>
-                  <input id="umail" name="umail" onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")}} />
+                  <input id="umail" name="umail"  onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")}} />
                 </li>
                 <li>
                   <label htmlFor="umessage">message</label>

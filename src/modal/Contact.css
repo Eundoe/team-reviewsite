@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 
-div#contmodal{}
+div#contmodal{
+  display: none;
+}
 
 div#contbox{
   box-sizing: border-box;
