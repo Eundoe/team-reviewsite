@@ -10,7 +10,7 @@ div#reviewmodal{
 div#modalbox{
   box-sizing: border-box;
   max-width: 950px;
-  width: 950px;
+  width: 100%;
   background-color: #fff;
   padding: 13px 25px;
   position: relative;
@@ -36,14 +36,16 @@ div#moviedata{
 }
 
 p.video{
-  max-width: 600px;
+  max-width: 63.15789473684211%;
+  /* max-width: 600px; */
   width: 600px;
   height: 300px;
   background-color: grey;
 }
 
 p.videoinfo{
-  max-width: 300px;
+  max-width: 31.57894736842105%;
+  /* max-width: 300px; */
   width: 300px;
 }
 
@@ -97,5 +99,48 @@ p.reviewing{
 
 @media screen and (min-width : 1440px) {}
 @media screen and (min-width : 980px) and (max-width:1440px) {}
-@media screen and (min-width : 580px) and (max-width:980px) {}
-@media screen and (min-width : 5px) and (max-width:580px) {}
+@media screen and (min-width : 580px) and (max-width:980px) {
+  div#modalbox{
+    max-width: 96%;
+    height: 90vh;
+  }
+
+  p.video{
+    max-width: 40%;
+  }
+
+  p.videoinfo{
+    max-width: 20%;
+  }
+
+  div#reviewdata{
+    padding: 5px  10px;
+    background-color: rgba(174, 144, 255, 1);
+    overflow-y: scroll;
+    height: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+}
+@media screen and (min-width : 5px) and (max-width:580px) {
+  div#modalbox{
+    max-width: 100%;
+    height: calc(100vh + 20px)
+  }
+
+  p.video{
+    max-width: 60%;
+  }
+
+  p.videoinfo{
+    max-width: 20%;
+  }
+
+  div#reviewdata{
+    padding: 5px  10px;
+    background-color: rgba(174, 144, 255, 1);
+    overflow-y: scroll;
+    height: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+
+}

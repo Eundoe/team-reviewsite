@@ -54,7 +54,7 @@ div.gall{
 div.gall>ul{
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: auto;
   background-color: #AE90FF;
 
@@ -111,12 +111,126 @@ div.newsp{
 }
 
 div.newsp>figure{
-  max-width: 500px;
+  max-width: 38.46153846153846%;
+  /* max-width: 500px; */
+  width: 500px;
   background-color: #D9D9D9;
+  font-size: 25px;
 }
 
 
-@media screen and (min-width : 1440px) {}
-@media screen and (min-width : 980px) and (max-width:1440px) {}
-@media screen and (min-width : 580px) and (max-width:980px) {}
-@media screen and (min-width : 5px) and (max-width:580px) {}
+@media screen and (min-width : 1440px) {
+  
+}
+@media screen and (min-width : 980px) and (max-width:1440px) {
+  p.next{
+    right: 8px; top: 50%;
+    margin-top: -15px;
+    width: 30px; height: 30px;
+  }
+  
+  p.prev{
+    left: 8px; top: 50%;
+    margin-top: -15px;
+    width: 30px; height: 30px;
+  }
+  
+}
+@media screen and (min-width : 580px) and (max-width:980px) {
+  div#homewrap{
+    padding: 10px 0;
+  }
+  div#homewrap>div{
+    margin-bottom: 26px;
+  }
+  div.gall>ul{
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+  }
+  div.gall>ul::-webkit-scrollbar{
+    display: none;
+  }
+
+  p.next{
+    display: none;
+  }
+  
+  p.prev{
+    display: none;
+  }
+
+  div.gall>ul>li>figure>p{
+    max-width: 124px;
+    max-height: 178px;
+    margin-bottom: 10px;
+  }
+
+  div.gall>ul>li>figure>p>img{
+    width: 124px;
+    height: 178px;
+  }
+
+
+  div.gall>ul>li>figure>p>span{
+    width: 37px; height: 37px;
+    margin-top: -18.5px; margin-left: -18.5px;
+  }
+  div.gall>ul>li>figure>figcaption>p{
+    font-size: 12px;  }
+  
+
+}
+@media screen and (min-width : 5px) and (max-width:580px) {
+  div#homewrap{
+    padding: 10px 0;
+  }
+  div#homewrap>div{
+    margin-bottom: 26px;
+  }
+  div.gall{
+    width: 98%;
+
+  }
+  div.gall>ul{
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+  }
+  div.gall>ul::-webkit-scrollbar{
+    display: none;
+  }
+
+  p.next{
+    display: none;
+  }
+  
+  p.prev{
+    display: none;
+  }
+
+  div.gall>ul>li>figure>p{
+    max-width: 124px;
+    max-height: 178px;
+    margin-bottom: 10px;
+  }
+
+  div.gall>ul>li>figure>p>img{
+    width: 124px;
+    height: 178px;
+  }
+
+
+  div.gall>ul>li>figure>p>span{
+    width: 37px; height: 37px;
+    margin-top: -18.5px; margin-left: -18.5px;
+  }
+  div.gall>ul>li>figure>figcaption>p{
+    font-size: 12px;  }
+    div.newsp{
+      width: 98%;
+    }
+
+}

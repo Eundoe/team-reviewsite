@@ -21,28 +21,28 @@ import NewsData from './data/news.json'
 
 function App(){
 
- let shinkai = "신카이 마코토"
- function getMovieData(){
-  const datay = fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=6b0a070ecaed603b459cac7b691dc16f&itemPerPage=30&directorNm=${shinkai}`).then(res => res.json())
-  return  datay.then((item) => item.movieListResult.movieList);
- }
+//  let shinkai = "신카이 마코토"
+//  function getMovieData(){
+//   const datay = fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=6b0a070ecaed603b459cac7b691dc16f&itemPerPage=30&directorNm=${shinkai}`).then(res => res.json())
+//   return  datay.then((item) => item.movieListResult.movieList);
+//  }
 
- const [test, setTest] = useState([])
+//  const [test, setTest] = useState([])
 
- useEffect(() => {
- async function GetData(){
-  let moviedata;
-  try{
-    moviedata = await getMovieData();
-    setTest(moviedata)
-  }
-  catch(error) {
-    console.log(error)
-  }
- }
- GetData()
-},[])
-console.log(test)
+//  useEffect(() => {
+//  async function GetData(){
+//   let moviedata;
+//   try{
+//     moviedata = await getMovieData();
+//     setTest(moviedata)
+//   }
+//   catch(error) {
+//     console.log(error)
+//   }
+//  }
+//  GetData()
+// },[])
+// console.log(test)
 
   let Rdata = []
   let Mdata = []
