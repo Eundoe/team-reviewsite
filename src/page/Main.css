@@ -57,12 +57,14 @@ div.gall>ul{
   align-items: flex-start;
   width: auto;
   background-color: #AE90FF;
+  margin-left: 0;
+  transition: all 0.3s ease-in-out;
 
 }
 
 div.gall>ul>li{
   max-width: 180px;
-  margin: 0 19px;
+  padding: 0 19px;
 }
 
 div.gall>ul>li>figure{}
@@ -147,6 +149,8 @@ div.newsp>figure{
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    transition: none;
+    margin-left: 0;
 
   }
   div.gall>ul::-webkit-scrollbar{
@@ -197,6 +201,8 @@ div.newsp>figure{
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    transition: none;
+    margin-left: 0;
 
   }
   div.gall>ul::-webkit-scrollbar{

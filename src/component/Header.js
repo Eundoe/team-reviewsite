@@ -16,7 +16,7 @@ function RecommendWord({Mdata,recow,setRcmd }){
     }
   
   return data.map((item, index) => {
-   return <li className="recdword" key={index} onClick={() => {ClickRcmd(item.name)  }}>
+   return <li className="recdword" key={index} onClick={() => {ClickRcmd(item.name)}}>
       {item.name}
     </li>
   })
@@ -36,7 +36,7 @@ function Header({setQuery, Mdata}){
             <label htmlFor="msearch" onClick={() => {
               setQuery(document.querySelector('input#msearch').value)
             }}>아이콘</label>
-            <input name = "msearch" id="msearch" onChange={(e) => setRcmd(e.target.value)}/>
+            <input name = "msearch" id="msearch" placeholder = "키워드를 입력" onChange={(e) => setRcmd(e.target.value)}/>
           </legend>
           <ul id="recommend">
             <RecommendWord Mdata = {Mdata} recow ={rcmd} setRcmd = {setRcmd}/>

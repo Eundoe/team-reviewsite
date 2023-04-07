@@ -24,7 +24,7 @@ function NewsList({area, Ndata}){
     return(
         <li key={index}>
           <figure>
-            <img src="" alt=""/>
+            <img src={item.pic} alt=""/>
             <figcaption>
               <h3 className="ntitle">{item.title}</h3>
               <p className="ndate">{item.date}</p>

@@ -1,4 +1,3 @@
-
 import ReviewM from "../modal/Reviewm"
 import './Main.css'
 
@@ -61,7 +60,7 @@ return data.map((item,index) => {
           </p>
           <figcaption>
           <p>
-            <img src="" alt="icon"/>
+            <img src={``} alt="icon"/>
             <span>{item.score}</span>
           </p>
           <p>{item.name}</p>
@@ -75,9 +74,55 @@ return data.map((item,index) => {
 
 
 function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
-  
+  let SlideNum0 = 0
+  let SlideNum1 = 0
+
+  function SlideContents(x,y){
+    let list = document.querySelector('div.gall>ul>li').offsetWidth
+    let max = Mdata.length
+
+    if (document.querySelector('div.gall>ul').childElementCount > 2){
+
+    if (y === 0){
+      if (x.getAttribute('class') === "next"){
+        (SlideNum0 > (max -2)) ? SlideNum0 = 0 : SlideNum0 += 1
+        x.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum0) + "px"
+      }
+      if (x.getAttribute('class') === "prev"){
+        if (SlideNum0 < 1){
+          SlideNum0 = max - 4
+        }
+        else{
+          SlideNum0 -= 1
+        }
+        x.previousElementSibling.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum0) + "px"
+      }
+    }
+
+    if (y === 1){
+      if (x.getAttribute('class') === "next"){
+        (SlideNum1 > (max -2)) ? SlideNum1 = 0 : SlideNum1 += 1
+        x.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum1) + "px"
+      }
+      if (x.getAttribute('class') === "prev"){
+        if (SlideNum1 < 1){
+          SlideNum1 = max - 4
+        }
+        else{
+          SlideNum1 -= 1
+        }
+        x.previousElementSibling.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum1) + "px"
+      }
+    }
+  }
+
+  }
+
 
   let FMdata = Mdata.filter((item) => {return item.name.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.story.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.actor.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.director.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,""))})
+
+
+
   return(
     <article id="home">
       <div id="homewrap">
@@ -90,8 +135,8 @@ function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
             <Listup Mdata = {FMdata} type = {"recently"} setClue ={setClue}/>
           </ul>
           </div>
-          <p className="next">next</p>
-          <p className="prev">prev</p>
+          <p className="next" onClick={(e) => {SlideContents(e.target,0)}}>next</p>
+          <p className="prev" onClick={(e) => {SlideContents(e.target,0)}}>prev</p>
           </div>
         </div>
         <div>
@@ -102,8 +147,8 @@ function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
             <Listup Mdata = {FMdata} type = {"score"} setClue ={setClue}/>
           </ul>
           </div>
-          <p className="next">next</p>
-          <p className="prev">prev</p>
+          <p className="next" onClick={(e) => {SlideContents(e.target,1)}}>next</p>
+          <p className="prev" onClick={(e) => {SlideContents(e.target,1)}}>prev</p>
           </div>
         </div>
         <div id="news">
