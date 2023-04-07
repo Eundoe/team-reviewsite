@@ -26,7 +26,7 @@ function ReviewM({Rdata, Mdata, clue}){
       <p id="mclose" onClick={() => {document.querySelector('div#reviewmodal').style.display = "none"}}>close</p>
         <div id="moviedata">
           <p className="video">
-            {FiltData[0].name}
+          <iframe width="100%" height="100%" src={FiltData[0].src} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
           </p>
           <div className="videoinfo">
             <p className="avgscore">{Math.floor(FiltData[0].score)}</p>

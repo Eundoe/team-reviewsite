@@ -2,6 +2,11 @@ import ReviewM from "../modal/Reviewm"
 import './Main.css'
 
 
+
+
+
+
+
 function NewsCard({Ndata, setNewsD}){
   let mainnews = []
   let bestnews = Ndata.sort((a,b) => {
@@ -76,47 +81,53 @@ return data.map((item,index) => {
 function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
   let SlideNum0 = 0
   let SlideNum1 = 0
+  let CurrentShow = 6
 
   function SlideContents(x,y){
     let list = document.querySelector('div.gall>ul>li').offsetWidth
     let max = Mdata.length
+    
+    if( window.outerWidth < 1440 && window.outerWidth > 1224){
+      CurrentShow = 5
+    }
+    if(window.outerWidth < 1224){
+      CurrentShow = 4
+    }
 
-    if (document.querySelector('div.gall>ul').childElementCount > 2){
+
+  if (document.querySelector('div.gall>ul').childElementCount > 2){
 
     if (y === 0){
       if (x.getAttribute('class') === "next"){
-        (SlideNum0 > (max -2)) ? SlideNum0 = 0 : SlideNum0 += 1
+       (SlideNum0 < (max - CurrentShow)) ? SlideNum0++ : SlideNum0 = 0
+    
         x.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum0) + "px"
       }
       if (x.getAttribute('class') === "prev"){
-        if (SlideNum0 < 1){
-          SlideNum0 = max - 4
-        }
-        else{
-          SlideNum0 -= 1
-        }
+        (SlideNum0 < 1) ? SlideNum0 = (max - CurrentShow) : SlideNum0 -= 1 
+
         x.previousElementSibling.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum0) + "px"
       }
     }
 
     if (y === 1){
       if (x.getAttribute('class') === "next"){
-        (SlideNum1 > (max -2)) ? SlideNum1 = 0 : SlideNum1 += 1
+        (SlideNum1 < (max - CurrentShow)) ? SlideNum1++ : SlideNum1 = 0
         x.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum1) + "px"
       }
       if (x.getAttribute('class') === "prev"){
-        if (SlideNum1 < 1){
-          SlideNum1 = max - 4
-        }
-        else{
-          SlideNum1 -= 1
-        }
+        (SlideNum1 < 1) ? SlideNum1 = (max - CurrentShow) : SlideNum1 -= 1 
         x.previousElementSibling.previousElementSibling.firstChild.style.marginLeft = "-" + (list * SlideNum1) + "px"
       }
     }
   }
-
   }
+
+  window.addEventListener("resize", () => {
+    if (window.outerWidth < 980){
+      document.querySelectorAll('div.gall>ul').forEach((item) => {item.style.marginLeft = "0"})
+    }
+  })
 
 
   let FMdata = Mdata.filter((item) => {return item.name.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.story.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.actor.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.director.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,""))})
