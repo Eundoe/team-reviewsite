@@ -121,6 +121,12 @@ div.newsp>figure{
   font-size: 25px;
 }
 
+div.newsp>figure>img{
+  margin: 0 auto;
+  display: block;
+  max-width: 40%;
+}
+
 
 @media screen and (min-width : 1440px) {
   

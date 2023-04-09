@@ -28,7 +28,7 @@ function NewsCard({Ndata, setNewsD}){
 return mainnews.map((item,index) => {
     return (
     <figure key={index}>
-      <img src="" alt=""/>
+      <img src={item.pic} alt={item.title}/>
       <figcaption onClick={() => {Countup(item.id)}}>
         <p className="mndate">{item.date}</p>
         <p className="mntitle">{item.title}</p>
