@@ -10,11 +10,11 @@ function NewsList({area, Ndata}){
   if (area === "award"){
     areas = Ndata.filter((item) => {
       return item.type === "award"
-    })}
+    }).slice(0,3)}
   if (area === "interview"){
     areas = Ndata.filter((item) => {
       return item.type === "interview"
-    })}
+    }).slice(0,3)}
   if (area === "count"){
     areas = Ndata.sort((a,b) => {
       return a.count > b.count ? -1 : 1

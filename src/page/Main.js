@@ -60,12 +60,12 @@ return data.map((item,index) => {
       <li key={index} onClick = {() => {setClue(item.name)}}>
         <figure>
           <p>
-          <img src="" alt=""/>
+          <img src={item.pic} alt={item.title}/>
           <span onClick = {() => {Showmovie(item.name)}}>더보기</span>
           </p>
           <figcaption>
           <p>
-            <img src={``} alt="icon"/>
+            <img src={'./images/rating/rating0' + Math.floor(item.score) + '.png'} alt="icon"/>
             <span>{item.score}</span>
           </p>
           <p>{item.name}</p>
@@ -146,8 +146,12 @@ function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
             <Listup Mdata = {FMdata} type = {"recently"} setClue ={setClue}/>
           </ul>
           </div>
-          <p className="next" onClick={(e) => {SlideContents(e.target,0)}}>next</p>
-          <p className="prev" onClick={(e) => {SlideContents(e.target,0)}}>prev</p>
+          <p className="next" onClick={(e) => {SlideContents(e.target,0)}}>
+            <img src="./images/icon/next.png" alt="next" onClick={(e) => {SlideContents(e.target.parentNode,0)}}/>
+          </p>
+          <p className="prev">
+            <img src="./images/icon/prev.png" alt="prev" onClick={(e) => {SlideContents(e.target.parentNode,0)}}/>
+          </p>
           </div>
         </div>
         <div>
@@ -158,8 +162,13 @@ function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
             <Listup Mdata = {FMdata} type = {"score"} setClue ={setClue}/>
           </ul>
           </div>
-          <p className="next" onClick={(e) => {SlideContents(e.target,1)}}>next</p>
-          <p className="prev" onClick={(e) => {SlideContents(e.target,1)}}>prev</p>
+          <p className="next">
+          <img src="./images/icon/next.png" alt="next" onClick={(e) => {SlideContents(e.target.parentNode,1)}}/>
+          </p>
+          <p className="prev" >
+          <img src="./images/icon/prev.png" alt="prev"
+          onClick={(e) => {SlideContents(e.target.parentNode,1)}}/>
+          </p>
           </div>
         </div>
         <div id="news">

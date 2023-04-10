@@ -61,7 +61,7 @@ function Contact(){
                   <input id="umail" name="umail"  onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")}} />
                 </li>
                 <li>
-                  <label htmlFor="umessage">message</label>
+                <label htmlFor="umessage">message</label>
                   <textarea name='umessage' id='umessage' cols="30" rows="10" onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")}} />
                 </li>
               </ul>

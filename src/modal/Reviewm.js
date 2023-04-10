@@ -16,9 +16,11 @@ function ReviewDetail({Rdata}){
 }
 
 function ReviewM({Rdata, Mdata, clue}){
+  
   let FiltData = Mdata.filter((item) => {
     return item.name === clue
   })
+
   return (
     <div id="reviewmodal" className="modalbase">
       <div id="modalbox">

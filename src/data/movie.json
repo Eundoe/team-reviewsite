@@ -4,7 +4,7 @@
     "name" : "귀멸의 칼날",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/sAU6Istwz6c",
-    "pic" :"path",
+    "pic" :"./images/poster/kimetsu.jpg",
     "date" : "2021-02-03",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -14,7 +14,7 @@
     "name" : "초속 5센티미터",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/eA7nDGE_E00",
-    "pic" :"path",
+    "pic" :"./images/poster/byoussoku.jpg",
     "date" : "2022-03-14",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -24,7 +24,7 @@
     "name" : "스즈메의 문단속",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/BBxtfGZodfo",
-    "pic" :"path",
+    "pic" :"./images/poster/suzume.jpg",
     "date" : "2023-01-01",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -34,7 +34,7 @@
     "name" : "날씨의 아이",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/ILQl1Q4jizc",
-    "pic" :"path",
+    "pic" :"./images/poster/tenkinoko.jpg",
     "date" : "2021-08-08",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -44,7 +44,7 @@
     "name" : "스파이더맨 : 노 웨이 홈",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/W7edvITC9g4",
-    "pic" :"path",
+    "pic" :"./images/poster/nowayhome.jpg",
     "date" : "2023-04-05",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -54,7 +54,7 @@
     "name" : "어벤져스 : 인피니티 워",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/xUDhdCsLkjU",
-    "pic" :"path",
+    "pic" :"./images/poster/infinitywar.jpg",
     "date" : "2018-05-05",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -64,7 +64,7 @@
     "name" : "셜록홈즈 : 그림자 게임",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/AsKYSOzCTvY",
-    "pic" :"path",
+    "pic" :"./images/poster/shadowgame.jpg",
     "date" : "2021-02-03",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
@@ -74,8 +74,48 @@
     "name" : "미녀와 야수",
     "story" : "this story is start from xxxx end is xxxx",
     "src" : "https://www.youtube.com/embed/n7LZA4Er7_g",
-    "pic" :"path",
+    "pic" :"./images/poster/beastnbeauty.jpg",
     "date" : "2010-05-05",
+    "director" : "감독이름",
+    "actor" : "actor1, actor2, actor3, actor4"
+  },
+  {
+    "id" : 8,
+    "name" : "리바운드",
+    "story" : "this story is start from xxxx end is xxxx",
+    "src" : "https://www.youtube.com/embed/kpXyRiJLORQ",
+    "pic" :"./images/poster/reboundposter.jpg",
+    "date" : "2021-02-03",
+    "director" : "감독이름",
+    "actor" : "actor1, actor2, actor3, actor4"
+  },
+  {
+    "id" : 9,
+    "name" : "더 퍼스트 슬램덩크",
+    "story" : "this story is start from xxxx end is xxxx",
+    "src" : "https://www.youtube.com/embed/sdFIv-yogIY",
+    "pic" :"./images/poster/slamdunk.jpg",
+    "date" : "2022-03-14",
+    "director" : "감독이름",
+    "actor" : "actor1, actor2, actor3, actor4"
+  },
+  {
+    "id" : 10,
+    "name" : "킬링 로맨스",
+    "story" : "this story is start from xxxx end is xxxx",
+    "src" : "https://www.youtube.com/embed/lNW1TvpM3hE",
+    "pic" :"./images/poster/killingromance.jpg",
+    "date" : "2021-08-08",
+    "director" : "감독이름",
+    "actor" : "actor1, actor2, actor3, actor4"
+  },
+  {
+    "id" : 11,
+    "name" : "존 윅 4",
+    "story" : "this story is start from xxxx end is xxxx",
+    "src" : "https://www.youtube.com/embed/jsu9KYYG3og",
+    "pic" :"./images/poster/johnwickchapter4.jpg",
+    "date" : "2023-04-05",
     "director" : "감독이름",
     "actor" : "actor1, actor2, actor3, actor4"
   }

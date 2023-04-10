@@ -29,13 +29,13 @@ function Header({setQuery, Mdata}){
     <header>
       <div id="headwrap">
       <h1>
-        <Link to='/'><img src="" alt="logo"/><span>Logois here</span></Link></h1>
+        <Link to='/'><img src="./images/icon/logo2.png" alt="logo"/></Link></h1>
       <form>
         <fieldset>
           <legend>
             <label htmlFor="msearch" onClick={() => {
               setQuery(document.querySelector('input#msearch').value)
-            }}>아이콘</label>
+            }}><img  src="./images/icon/search.png" alt="search"/></label>
             <input name = "msearch" id="msearch" placeholder = "키워드를 입력" onChange={(e) => setRcmd(e.target.value)}/>
           </legend>
           <ul id="recommend">
@@ -45,10 +45,16 @@ function Header({setQuery, Mdata}){
       </form>
       <nav>
         <ul>
-          <li className="hwrite">wrtieicon</li>
+          <li className="hwrite">
+            <img src="./images/icon/write.png" alt="writereview"/>
+          </li>
           <li className="hnews">
-            <Link to='/news'>newsicon</Link></li>
-          <li className="hacc">accounticon</li>
+            <Link to='/news'>
+              <img src="./images/icon/news.png" alt="news"/>
+            </Link></li>
+          <li className="hacc">
+            <img src="./images/icon/people.png" alt="account"/>
+          </li>
         </ul>
       </nav>
       </div>

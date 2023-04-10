@@ -29,15 +29,28 @@ p.next{
   right: 18px; top: 50%;
   margin-top: -20px;
   width: 40px; height: 40px;
-  background-color: red;
+  border-radius: 50%;
 }
+
+p.next>img{
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
 
 p.prev{
   position: absolute;
   left: 18px; top: 50%;
   margin-top: -20px;
   width: 40px; height: 40px;
-  background-color: red;
+  border-radius: 50%;
+}
+
+p.prev>img{
+  display: block;
+  max-width: 100%;
+  width: 100%;
 }
 
 
@@ -45,7 +58,6 @@ div.gall{
   width: 90.27777777777778%;
   /* width: 1300px; */
   margin: 0 auto;
-  background-color: #AE90FF;
   padding: 15px 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -56,7 +68,6 @@ div.gall>ul{
   justify-content: flex-start;
   align-items: flex-start;
   width: auto;
-  background-color: #AE90FF;
   margin-left: 0;
   transition: all 0.3s ease-in-out;
   width: 100%;
@@ -108,16 +119,15 @@ div.newsp{
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
-  background-color: #AE90FF;
   padding: 16px 0;
   box-sizing: border-box;
+  align-items: center;
 }
 
 div.newsp>figure{
   max-width: 38.46153846153846%;
   /* max-width: 500px; */
   width: 500px;
-  background-color: #D9D9D9;
   font-size: 25px;
 }
 
