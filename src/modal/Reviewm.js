@@ -24,7 +24,7 @@ function ReviewM({Rdata, Mdata, clue}){
   return (
     <div id="reviewmodal" className="modalbase">
       <div id="modalbox">
-      <h2>Logoishere</h2>
+      <h2><img src='' alt=''/></h2>
       <p id="mclose" onClick={() => {document.querySelector('div#reviewmodal').style.display = "none"}}>close</p>
         <div id="moviedata">
           <p className="video">
