@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
+import WriteReview from "../modal/Write"
+import Login from "../modal/Login"
+
 
 function RecommendWord({Mdata,recow,setRcmd }){
   if (recow === "" || recow === "," || recow.length < 2 ){
@@ -46,19 +49,24 @@ function Header({setQuery, Mdata}){
       <nav>
         <ul>
           <li className="hwrite">
-            <img src="./images/icon/write.png" alt="writereview"/>
+            <img src="./images/icon/write.png" alt="writereview" onClick={() => {
+              document.querySelector('div#writemodal').style.display = "flex"
+            }}/>
           </li>
           <li className="hnews">
             <Link to='/news'>
               <img src="./images/icon/news.png" alt="news"/>
             </Link></li>
           <li className="hacc">
-            <img src="./images/icon/people.png" alt="account"/>
+            <img src="./images/icon/people.png" alt="account" onClick={() => {
+              document.querySelector('div#logmodal').style.display ="flex"
+            }}/>
           </li>
         </ul>
       </nav>
       </div>
-
+      <Login/>
+      <WriteReview/>
     </header>
   )
 }

@@ -1,0 +1,33 @@
+
+
+div#writemodal{
+  display: none;
+  background-color: rgba(174, 144, 255, 0.5);
+  padding: 5px 0;
+}
+
+
+
+li#scorev{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.wscorebox{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+span.wscorebox>label{
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media screen and (min-width : 1440px) {}
+@media screen and (min-width : 980px) and (max-width:1440px) {}
+@media screen and (min-width : 580px) and (max-width:980px){}
+@media screen and (min-width : 5px) and (max-width:580px){}

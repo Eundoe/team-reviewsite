@@ -294,6 +294,7 @@ div.modalbase{
     width: 100%;
     left: 0; bottom: 0;
     padding: 20px 0;
+    background-color: #795BCD;
   }
   div#headwrap>nav>ul{
     justify-content: space-around;
