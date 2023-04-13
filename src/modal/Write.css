@@ -12,6 +12,21 @@ li#scorev{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+ul#writercmd{
+  position: absolute;
+  width: 326px;
+  box-sizing: border-box;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 5px;
+  background-color: #fff;
+  border: 0.2px solid rgba(174, 144, 255, 0.5);
 }
 
 span.wscorebox{
@@ -25,9 +40,132 @@ span.wscorebox>label{
   align-items: center;
 }
 
+div#writebox{
+  box-sizing: border-box;
+  max-width: 950px;
+  width: 950px;
+  background-color: #fff;
+  padding: 13px 25px;
+  position: relative;
+}
+
+div#writemodal{
+  text-align: center;
+}
+
+p#wclose{
+  text-align: center;
+  position: absolute;
+  right: 10px; top: 10px;
+  width: 40px; height: 40px;
+  /* background-color: rgba(176, 230, 241, 1); */
+}
+p#wclose>img{
+  width: 40px;
+}
+
+#writebox>h2>img{
+  width: 50px;
+  margin-bottom: 20px;
+}
+#writebox>h2>span{
+  display: block;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+
+
+
+#writebox{}
+#writebox>h2{
+  margin: 70px 0 50px 0;
+}
+#writebox ul>li:nth-child(1){
+  border-radius: 10px;
+  position: relative;
+}
+
+#writebox ul>li:nth-child(1)>label{
+  margin-right: 20px;
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  line-height: 42px;
+  color: #4f4f44;
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+#writebox ul>li:nth-child(1)>input{
+  width: 322px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(176, 230, 241, 1);
+  color: #4f4f44;
+}
+
+#writebox ul>li#scorev{
+  margin: 15px 0 10px 0;
+}
+#writebox ul>li:nth-child(3){
+  position: relative;
+}
+#writebox ul>li:nth-child(3)>label{
+  display: block;
+  text-align: left;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  font-size: 18px;
+  color: #4f4f44;
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+#writebox ul>li:nth-child(3)>textarea{
+  width: 323px;
+  background-color: rgba(176, 230, 241, 1);
+  border: 0.5px solid #d9d9d9;
+  border-radius: 10px;
+  margin: 10px 0;
+  resize: none;
+}
+#writebox ul>li:nth-child(3)>span{
+  display: block;
+  text-align: right;
+  color: #4f4f44;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}
+
+
+#writebox button{
+  width: 328px;
+  height: 50px;
+  background-color: rgba(176, 230, 241, 1);
+  border: 0.5px solid #d9d9d9;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 20px 0 70px 0;
+}
+
+
+
 
 
 @media screen and (min-width : 1440px) {}
 @media screen and (min-width : 980px) and (max-width:1440px) {}
-@media screen and (min-width : 580px) and (max-width:980px){}
-@media screen and (min-width : 5px) and (max-width:580px){}
+@media screen and (min-width : 580px) and (max-width:980px){
+  div#writebox{
+    max-width: 96%;
+    height: 90vh;
+  }
+}
+@media screen and (min-width : 5px) and (max-width:580px){
+  div#writebox{
+    max-width: 100%;
+    height: (100vh);
+  }
+}

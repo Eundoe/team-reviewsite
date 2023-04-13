@@ -43,8 +43,8 @@ function Contact(){
   return(
     <div id="contmodal" className="modalbase">
       <div id="contbox">
-        <p id="cclose" onClick={() => {ResetContact()}}>close</p>
-        <h2>Contact</h2>
+        <p id="cclose" onClick={() => {ResetContact()}}><img src='./images/icon/close.png' alt='close'/></p>
+        <h2><img src='./images/icon/modallogo.png' alt='modallogo'/><span>Contact</span></h2>
         <form>
           <fieldset>
             <legend className='contactform'>

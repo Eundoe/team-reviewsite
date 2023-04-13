@@ -61,7 +61,7 @@ return data.map((item,index) => {
         <figure>
           <p>
           <img src={item.pic} alt={item.title}/>
-          <span onClick = {() => {Showmovie(item.name)}}>더보기</span>
+          <span className="moredetail"><img src="./images/icon/play.png" alt="더보기" onClick = {() => {Showmovie(item.name)}}/></span>
           </p>
           <figcaption>
           <p>

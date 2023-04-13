@@ -174,10 +174,20 @@ p#flogo>img{
 div#fcontact{
   /* max-width: 340px; */
   max-width: 26.15384615384615%;
+  text-align: center;
 }
 
-p.fcicon{}
-p.fccont{}
+p.fcicon{
+  margin-bottom: 15px;
+}
+
+p.fcicon>img{
+  max-width: 50px;
+  max-height: 50px;
+}
+p.fccont{
+  color: #fff;
+}
 
 ul#devloper{}
 ul#devloper>li{

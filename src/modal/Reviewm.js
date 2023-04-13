@@ -4,7 +4,7 @@ function ReviewDetail({Rdata}){
   return Rdata.map((item,index) => {
     return (
       <figure key={index}>
-        <img src="" alt="" />
+        <img src="./images/icon/person.png" alt="user" />
         <figcaption>
           <h3>{item.name}</h3>
           <p className="score">{item.score}점</p>
@@ -24,8 +24,8 @@ function ReviewM({Rdata, Mdata, clue}){
   return (
     <div id="reviewmodal" className="modalbase">
       <div id="modalbox">
-      <h2><img src='' alt=''/></h2>
-      <p id="mclose" onClick={() => {document.querySelector('div#reviewmodal').style.display = "none"}}>close</p>
+      <h2><img src='./images/icon/modallogo.png' alt='modallogo'/><span>영화정보</span></h2>
+      <p id="mclose" onClick={() => {document.querySelector('div#reviewmodal').style.display = "none"}}><img src='./images/icon/close.png' alt='close'/></p>
         <div id="moviedata">
           <p className="video">
           <iframe width="100%" height="100%" src={FiltData[0].src} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>

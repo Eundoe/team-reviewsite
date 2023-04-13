@@ -1,0 +1,5 @@
+#prewrap h2{}
+#prewrap h2>img{}
+#prewrap h2>span{}
+
+#prewrap p>span{}

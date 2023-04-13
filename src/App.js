@@ -46,13 +46,13 @@ function App(){
 
   let Rdata = []
   let Mdata = []
-  const [ReviwD, setReviewD] = useState(ReviewData)
+  const [ReviewD, setReviewD] = useState(ReviewData)
   const [MovieD, setMovieD] = useState(MovieData)
   const [NewsD, setNewsD] = useState(NewsData)
   const [clue,setClue] = useState(MovieData[1].name)
   const [query,setQuery] = useState('')
 
- for (let i of ReviwD[clue.replace(/(\s*)/g,"").toLowerCase()]){
+ for (let i of ReviewD[clue.replace(/(\s*)/g,"").toLowerCase()]){
   if(i === null || i === undefined){
     Rdata = []
   }
@@ -68,7 +68,7 @@ function App(){
 
 
 
-  for (let j of ReviwD[data]){
+  for (let j of ReviewD[data]){
     if (j === null){
       return false
     }
@@ -86,7 +86,7 @@ function App(){
     <BrowserRouter>
     <div id='wrap'>
 
-    <Header setQuery = {setQuery} Mdata = {Mdata}/>
+    <Header setQuery = {setQuery} Mdata = {Mdata} setReviewD = {setReviewD} setMovieD = {setMovieD} ReviewD = {ReviewD}/>
     <Routes>
       <Route path = "/" element ={<Home Rdata = {Rdata} Mdata ={Mdata} query ={query} setClue = {setClue} clue = {clue} Ndata = {NewsD} setNewsD = {setNewsD}/>}/>
       <Route path = "/news" element ={<News Ndata = {NewsD} setNewsD = {setNewsD}/>}/>

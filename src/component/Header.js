@@ -26,7 +26,7 @@ function RecommendWord({Mdata,recow,setRcmd }){
 }
 }
 
-function Header({setQuery, Mdata}){
+function Header({setQuery, Mdata, setReviewD, setMovieD, ReviewD}){
   const [rcmd,setRcmd] = useState('')
   return(
     <header>
@@ -66,7 +66,7 @@ function Header({setQuery, Mdata}){
       </nav>
       </div>
       <Login/>
-      <WriteReview/>
+      <WriteReview Bdata = {Mdata} setReviewD = {setReviewD} setMovieD ={setMovieD} ReviewD = {ReviewD}/>
     </header>
   )
 }

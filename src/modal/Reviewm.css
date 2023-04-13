@@ -17,15 +17,32 @@ div#modalbox{
 }
 
 div#modalbox>h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin-bottom: 30px;
+  font-size: 28px;
+}
+
+div#modalbox>h2>img{
+  max-width: 40px;
+  margin: 0 10px;
 }
 
 p#mclose{
   position: absolute;
   right: 10px; top: 10px;
   width: 40px; height: 40px;
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p#mclose>img{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 div#moviedata{
@@ -71,7 +88,6 @@ div#reviewdata>figure>img{
   margin: 0 5px;
   width: 30px;
   height: 30px;
-  background-color: red;
 }
 
 div#reviewdata>figure>figcaption{
