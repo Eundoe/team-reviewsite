@@ -37,8 +37,8 @@ function Login(){
                     }}/>
                 </li>
                 <li>
-                  <span onClick={() => {prepareshow("flex")}}>아이디/</span>
-                  <span onClick={() => {prepareshow("flex")}}>비밀번호 찾기</span>
+                  <span className='pointer' onClick={() => {prepareshow("flex")}}>아이디</span>/
+                  <span className='pointer' onClick={() => {prepareshow("flex")}}>비밀번호 찾기</span>
                 </li>
               </ul>
               <button onClick={(e) => {return (e.preventDefault(), prepareshow("flex"))}}>로그인</button>
@@ -46,7 +46,7 @@ function Login(){
           </fieldset>
           <ul id="logset">
             <li>회원이 아니신가요?</li>
-            <li onClick={() => {prepareshow("flex")}}>회원가입</li>
+            <li className='pointer' onClick={() => {prepareshow("flex")}}>회원가입</li>
           </ul>
         </form>
       </div>
