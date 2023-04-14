@@ -94,7 +94,22 @@ p#wclose>img{
   text-indent: 10px;
 }
 
+#writebox ul>li:nth-child(1)>ul#writercmd{
+  width: 100%;
+  position: absolute;
+  left: 0; top: 100%;
+  z-index: 10;
+  background-color: #fff;
+  border: 0.5px solid rgba(174, 144, 255, 0.5);
+}
+#writebox ul>li:nth-child(1)>ul#writercmd>li{
+  width: 100%;
+  margin: 5px 0;
+}
+
+
 #writebox ul>li#scorev{
+  width: 100%;
   margin: 15px 0 10px 0;
 }
 #writebox ul>li:nth-child(3){

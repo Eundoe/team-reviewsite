@@ -112,9 +112,9 @@ function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
         id : Bdata.length - 1,
         name : document.querySelector('input#wsearch').value,
         story : "새로추가된 영화",
-        src : "준비중입니다.",
+        src : "https://www.youtube.com/embed/Am7sdftF9aQ",
         pic : "준비중입니다.",
-        date : String(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()),
+        date : today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
         director : "준비중입니다.",
         actor : "actor확인중"
       }
@@ -129,7 +129,6 @@ function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
   }
 }
   
-
   return(
     <div id="writemodal" className="modalbase">
       <div id="writebox">
