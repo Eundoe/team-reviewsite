@@ -9,6 +9,7 @@ import Footer from './component/Footer'
 //page
 import Home from './page/Main'
 import News from './page/News'
+import Preparing from './modal/Preparing'
 // data
 import MovieData from './data/movie.json'
 import ReviewData from './data/review.json'
@@ -91,6 +92,7 @@ function App(){
       <Route path = "/" element ={<Home Rdata = {Rdata} Mdata ={Mdata} query ={query} setClue = {setClue} clue = {clue} Ndata = {NewsD} setNewsD = {setNewsD}/>}/>
       <Route path = "/news" element ={<News Ndata = {NewsD} setNewsD = {setNewsD}/>}/>
     </Routes>
+    <Preparing/>
     <Footer/>
     </div>
     </BrowserRouter>

@@ -15,13 +15,6 @@ function ScoreRadio(){
   })
 }
 
-function ResetWrite(){
-  document.querySelector('input#wsearch').value = ""
-  document.querySelector('input#wsearch').previousElementSibling.style.opacity = "1"
-  document.querySelector('textarea#wreview').value = ""
-  document.querySelector('textarea#wreview').previousElementSibling.style.opacity = "1"
-  document.querySelector('div#writemodal').style.display = "none"
-}
 
 
 
@@ -59,6 +52,32 @@ function WriteRcmd({Bdata, Rcmd, setReviewrcmd}){
 
 function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
   const [reviewrcmd,setReviewrcmd] = useState('')
+  const [charcount,setCharcount] = useState(0)
+  let max = 180
+  let warncolor = (charcount === max)? "red" : "black"
+
+
+  function ResetWrite(){
+    document.querySelector('input#wsearch').value = ""
+    document.querySelector('input#wsearch').previousElementSibling.style.opacity = "1"
+    document.querySelector('textarea#wreview').value = ""
+    document.querySelector('textarea#wreview').previousElementSibling.style.opacity = "1"
+    document.querySelector('div#writemodal').style.display = "none"
+    setCharcount(0)
+    if (Boolean(document.querySelector('input[name="score"]:checked')) === true){
+      document.querySelector('input[name="score"]:checked').checked = false
+    }
+  }
+  
+
+
+
+  function maximumWord(x){
+    if (x.value.length > max){
+      x.value = x.value.substr(0,max)
+    }
+    setCharcount(x.value.length)
+  }
 
   function AddReview(x){
     x.preventDefault();
@@ -86,8 +105,7 @@ function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
 
     if (addData.length === 1){
       cloneReview[document.querySelector('input#wsearch').value.replace(/(\s*)/g,"").toLowerCase()].push(newReview)
-      setReviewD(cloneReview)
-    }
+      setReviewD(cloneReview)}
     else{
       let today = new Date()
       let newMovie = {
@@ -100,16 +118,15 @@ function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
         director : "준비중입니다.",
         actor : "actor확인중"
       }
-
       cloneReview[document.querySelector('input#wsearch').value.replace(/(\s*)/g,"").toLowerCase()] = []
       cloneReview[document.querySelector('input#wsearch').value.replace(/(\s*)/g,"").toLowerCase()].push(newReview)
       setReviewD(cloneReview)
       setMovieD((prev) => {return [...prev,newMovie]})
+      document.querySelector('input[name="score"]:checked').checked = false
+      setReviewrcmd('')
+      ResetWrite()
     }
   }
-  document.querySelector('input[name="score"]:checked').setAttribute('checked',false)
-  setReviewrcmd('')
-  ResetWrite()
 }
   
 
@@ -126,7 +143,7 @@ function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
               <ul>
                 <li>
                   <label htmlFor="wsearch">영화검색</label>
-                  <input id="wsearch" name="wsearch"
+                  <input autoComplete='off' id="wsearch" name="wsearch"
                     onFocus={(e) => {e.target.previousElementSibling.style.opacity="0"}} onBlur = {(e) => {
                       return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")
                     }} onChange={(e) => {setReviewrcmd(e.target.value)}}
@@ -138,10 +155,10 @@ function WriteReview({Bdata, setReviewD, setMovieD, ReviewD}){
                   </li>
                 <li>
                   <label htmlFor="wreview">리뷰작성</label>
-                  <textarea id="wreview" cols="30" rows="10" onFocus={(e) => {e.target.previousElementSibling.style.opacity="0"}} onBlur = {(e) => {
+                  <textarea onChange={(e) => {maximumWord(e.target)}} id="wreview" cols="30" rows="10" onFocus={(e) => {e.target.previousElementSibling.style.opacity="0"}} onBlur = {(e) => {
                       return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")
                     }}/>
-                  <span id='maxword'>180/180</span>
+                  <span id='maxword' style={{color : warncolor}}>{charcount + "/" + max}</span>
                 </li>
               </ul>
               <button onClick={(e) => {return AddReview(e)}}>제출하기</button>

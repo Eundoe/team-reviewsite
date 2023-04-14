@@ -24,6 +24,7 @@ p#cclose>img{
   display: block;
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }
 
 div#contbox>h2{
@@ -95,6 +96,7 @@ legend.contactform>button{
   width: auto;
   margin: 0 auto;
   padding: 10px 25px;
+  cursor: pointer;
 }
 
 @media screen and (min-width : 1440px) {}
@@ -112,5 +114,8 @@ legend.contactform>button{
     max-width: 100%;
     height: calc(100vh + 20px)
   }
-
+  p#cclose{
+    top: 25px;
+    width: 35px; height: 35px;
+  }
 }

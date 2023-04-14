@@ -1,4 +1,5 @@
 import './Login.css'
+import { prepareshow } from '../api/api'
 
 
 function ResetLogin(){
@@ -25,7 +26,7 @@ function Login(){
               <ul>
                 <li>
                   <label htmlFor="login">로그인</label>
-                  <input type="text" name="login" id="login" onFocus={(e) => {e.target.previousElementSibling.style.opacity="0"}} onBlur = {(e) => {
+                  <input autoComplete='off' type="text" name="login" id="login" onFocus={(e) => {e.target.previousElementSibling.style.opacity="0"}} onBlur = {(e) => {
                       return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")
                     }}/>
                 </li>
@@ -36,16 +37,16 @@ function Login(){
                     }}/>
                 </li>
                 <li>
-                  <span>아이디/</span>
-                  <span>비밀번호 찾기</span>
+                  <span onClick={() => {prepareshow("flex")}}>아이디/</span>
+                  <span onClick={() => {prepareshow("flex")}}>비밀번호 찾기</span>
                 </li>
               </ul>
-              <button onClick={(e) => {e.preventDefault()}}>로그인</button>
+              <button onClick={(e) => {return (e.preventDefault(), prepareshow("flex"))}}>로그인</button>
             </legend>
           </fieldset>
           <ul id="logset">
             <li>회원이 아니신가요?</li>
-            <li>회원가입</li>
+            <li onClick={() => {prepareshow("flex")}}>회원가입</li>
           </ul>
         </form>
       </div>

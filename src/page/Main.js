@@ -1,12 +1,6 @@
 import ReviewM from "../modal/Reviewm"
 import './Main.css'
 
-
-
-
-
-
-
 function NewsCard({Ndata, setNewsD}){
   let mainnews = []
   let bestnews = Ndata.sort((a,b) => {
@@ -131,8 +125,6 @@ function Home({Rdata, Mdata, setClue, clue, query, Ndata, setNewsD}){
 
 
   let FMdata = Mdata.filter((item) => {return item.name.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.story.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.actor.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,"")) || item.director.replace(/(\s*)/g,"").toLowerCase().includes(query.toLowerCase().trim().replace(/(\s*)/g,""))})
-
-
 
   return(
     <article id="home">

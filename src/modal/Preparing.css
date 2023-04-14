@@ -1,5 +1,67 @@
-#prewrap h2{}
-#prewrap h2>img{}
-#prewrap h2>span{}
+#premodal{
+  display: none;
+  z-index: 50;
+}
 
-#prewrap p>span{}
+#prewrap{
+  box-sizing: border-box;
+  max-width: 950px;
+  width: 950px;
+  background-color: #fff;
+  padding: 13px 25px;
+  position: relative;
+  text-align: center;
+}
+#pclose{
+  position: absolute;
+  right: 10px; top: 10px;
+  width: 40px; height: 40px;
+}
+#pclose>img{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+#prewrap h2{
+  margin-top: 150px;
+}
+#prewrap h2>img{
+  width: 70px;
+  margin-bottom: 20px;
+}
+#prewrap h2>span{
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#prewrap p{
+  margin-bottom: 150px;
+}
+
+#prewrap p>span{
+  display: block;
+  line-height: 1.5em;
+  color: #4f4f4f;
+}
+
+@media screen and (min-width : 1440px) {}
+@media screen and (min-width : 980px) and (max-width:1440px) {}
+@media screen and (min-width : 580px) and (max-width:980px) {
+  div#prewrap{
+    max-width: 96%;
+    height: 90vh;
+  }
+  #prewrap h2{
+    margin-top: 50%;
+  }
+
+}
+@media screen and (min-width : 5px) and (max-width:580px) {
+  div#prewrap{
+    max-width: 100%;
+    height: calc(100vh + 20px)
+  }
+  #prewrap h2{
+    margin-top: 50%;
+  }
+}

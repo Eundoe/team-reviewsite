@@ -51,14 +51,14 @@ function Contact(){
               <ul>
                 <li>
                   <label htmlFor="uname">name</label>
-                  <input id="uname" name="uname" 
+                  <input autoComplete='off' id="uname" name="uname" 
                   onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {
                     return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")
                     }} />
                 </li>
                 <li>
                   <label htmlFor="umail">email</label>
-                  <input id="umail" name="umail"  onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")}} />
+                  <input autoComplete='off' id="umail" name="umail"  onFocus={(e) => {e.target.previousElementSibling.style.opacity ="0"}} onBlur = {(e) => {return (e.target.value.length > 0) ? false : (e.target.previousElementSibling.style.opacity ="1")}} />
                 </li>
                 <li>
                 <label htmlFor="umessage">message</label>

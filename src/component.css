@@ -83,11 +83,13 @@ div#headwrap>form>fieldset>legend>label{
   position: absolute;
   right: 2.061666666666667%;
   top: 24.74%;
+
 }
 
 div#headwrap>form>fieldset>legend>label>img{
   display: block;
   max-width: 100%;
+  cursor: pointer;
 }
 
 div#headwrap>form>fieldset>legend>input{
@@ -118,19 +120,22 @@ div#headwrap>nav>ul{
 }
 
 div#headwrap>nav>ul>li{
-  max-width: 50px;
-  max-height: 50px;
-  height: 50px;
+  max-width: 40px;
+  max-height: 40px;
+  height: 40px;
 }
 
 div#headwrap>nav>ul>li>img{
+  width: 40px;
   display: block;
   max-width: 100%;
+  cursor: pointer;
 }
 
 div#headwrap>nav>ul>li>a{}
 
 div#headwrap>nav>ul>li>a>img{
+  width: 40px;
   display: block;
   max-width: 100%;
 }
@@ -146,9 +151,10 @@ footer{
 
 footer>small{
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   text-align: center;
+  color: #d3d3d3;
 }
 
 div#footerwrap{
@@ -169,24 +175,30 @@ p#flogo{
 p#flogo>img{
   display: block;
   max-width: 100%;
+  width: 128px;
 }
 
 div#fcontact{
   /* max-width: 340px; */
   max-width: 26.15384615384615%;
-  text-align: center;
 }
 
 p.fcicon{
+  text-align: center;
+  cursor: pointer;
+}
+p.fcicon>img{
+  width: 50px;
   margin-bottom: 15px;
 }
-
-p.fcicon>img{
-  max-width: 50px;
-  max-height: 50px;
-}
 p.fccont{
+  text-align: center;
   color: #fff;
+  line-height: 1.5em;
+}
+p.fccont>span{
+  display: block;
+  
 }
 
 ul#devloper{}
@@ -223,10 +235,19 @@ div.modalbase{
   justify-content: center;
   align-items: center;
 }
+#contbox{
+  position: relative;
+}
 
-
-
-
+#cclose{
+  position: absolute;
+  right: 10px; top: 10px;
+  width: 40px; height: 40px;
+}
+#cclose>img{
+  width: 40px;
+  height: 40px;
+}
 
 @media screen and (min-width : 1440px) {
   div#wrap{
@@ -294,6 +315,11 @@ div.modalbase{
   div#headwrap>form{
     width: 70%;
   }
+  div#headwrap>form>fieldset>legend>label{
+    width: 20px;
+    height: 20px;
+    top: 23%;
+  }
   div#headwrap>form>fieldset>legend>input{
     line-height: 35px;
   }
@@ -329,6 +355,32 @@ div.modalbase{
     width: 100%;
     padding-top: 67px;
   }
+  div#footerwrap{
+    display: block;
+  }
+  p#flogo{
+    max-width: none;
+  }
+  p#flogo>img{
+    margin: 0 30px;
+    width: 100px;
+  }
+  div#fcontact{
+    max-width: none;
+    margin: 20px 0 30px 0;
+  }
+  ul#devloper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
+  ul#devloper>li{
+    margin: 5px 0;
+    width: 51%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
 }

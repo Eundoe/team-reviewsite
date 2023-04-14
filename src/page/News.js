@@ -1,4 +1,4 @@
-
+import { prepareshow } from '../api/api'
 import './News.css'
 
 function NewsList({area, Ndata}){
@@ -24,7 +24,7 @@ function NewsList({area, Ndata}){
     return(
         <li key={index}>
           <figure>
-            <img src={item.pic} alt=""/>
+            <img src={item.pic} alt="기사사진"/>
             <figcaption>
               <h3 className="ntitle">{item.title}</h3>
               <p className="ndate">{item.date}</p>
@@ -45,7 +45,7 @@ function News({Ndata}){
         <div id="Nrecently">
           <div className='subtitle'>
             <h2>최신뉴스</h2>
-            <p className="Nallview">view all</p>
+            <p className="Nallview" onClick={() => {prepareshow("flex")}}>view all</p>
           </div>
           <div className = "newsgall">
           <ul>
@@ -56,7 +56,7 @@ function News({Ndata}){
         <div id="Ninterview">
         <div className='subtitle'>
           <h2>스타인터뷰</h2>
-          <p className="Nallview">view all</p>
+          <p className="Nallview" onClick={() => {prepareshow("flex")}}>view all</p>
           </div>
           <div className = "newsgall">
             <ul>
@@ -78,7 +78,7 @@ function News({Ndata}){
       </div>
       <div id="Nnewsside">
         <h2>가장 많이본 뉴스</h2>
-        <p className="Nallview">view all</p>
+        <p className="Nallview" onClick={() => {prepareshow("flex")}}>view all</p>
         <ul>
             <NewsList Ndata = {Ndata} area='count'/>
         </ul>

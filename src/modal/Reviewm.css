@@ -37,12 +37,14 @@ p#mclose{
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 p#mclose>img{
   display: block;
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }
 
 div#moviedata{
@@ -133,7 +135,7 @@ p.reviewing{
     padding: 5px  10px;
     background-color: rgba(174, 144, 255, 1);
     overflow-y: scroll;
-    height: 300px;
+    height: 250px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   }
 }
